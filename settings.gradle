@@ -1,0 +1,5 @@
+rootProject.name = 'test-playground'
+include 'account-service'
+include 'bank-service'
+include 'bank-service-http-client'
+include 'core-web'

@@ -1,0 +1,13 @@
+plugins {
+    id 'java-test-fixtures'
+}
+
+bootJar.enabled = false
+jar.enabled = true
+
+group = 'com.example.coreweb'
+version = '0.0.1'
+
+dependencies {
+    implementation('org.springframework.cloud:spring-cloud-starter-openfeign')
+}

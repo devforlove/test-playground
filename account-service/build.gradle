@@ -1,0 +1,13 @@
+bootJar.enabled = true
+jar.enabled = false
+
+dependencies {
+    implementation(project(':core-web'))
+    implementation('org.springframework.boot:spring-boot-starter-data-jpa')
+    implementation(project(':bank-service-http-client'))
+    runtimeOnly 'com.mysql:mysql-connector-j'
+
+    testImplementation(testFixtures(project(':bank-service-http-client')))
+    testImplementation(testFixtures(project(':core-web')))
+    testImplementation('io.rest-assured:rest-assured:5.1.1')
+}

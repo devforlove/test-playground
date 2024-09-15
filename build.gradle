@@ -1,0 +1,65 @@
+buildscript {
+	ext {
+		set('springBootVersion', '3.3.3')
+		set('lombokVersion', '1.18.24')
+		set('springCloudVersion', '2023.0.1')
+		set('commonLangVersion', '3.12.0')
+	}
+
+
+	repositories {
+		mavenCentral()
+		maven { url 'https://repo.spring.io/milestone' }
+		maven { url 'https://repo.spring.io/snapshot' }
+		maven { url 'https://plugins.gradle.org/m2/' }
+	}
+
+	dependencies {
+		classpath 'io.spring.gradle:dependency-management-plugin:1.1.6.RELEASE'
+		classpath "org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}"
+	}
+}
+
+
+allprojects {
+	group 'com.wook.top'
+	version '1.0'
+}
+
+subprojects {
+	apply plugin: 'org.springframework.boot'
+	apply plugin: 'io.spring.dependency-management'
+	apply plugin: 'java-library'
+	apply plugin: 'jacoco'
+
+	sourceCompatibility = JavaVersion.VERSION_17
+	targetCompatibility = JavaVersion.VERSION_17
+
+	tasks.named('test') {
+		useJUnitPlatform()
+	}
+
+	repositories {
+		mavenCentral()
+		maven { url 'https://jitpack.io' }
+	}
+
+	dependencyManagement {
+		imports {
+			mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+		}
+	}
+
+	dependencies {
+		compileOnly 'org.projectlombok:lombok'
+		annotationProcessor 'org.projectlombok:lombok'
+		testCompileOnly 'org.projectlombok:lombok'
+		testAnnotationProcessor 'org.projectlombok:lombok'
+
+		testImplementation 'org.junit.jupiter:junit-jupiter-api:5.10.3'
+		testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.10.3'
+
+		implementation 'org.springframework.boot:spring-boot-starter-aop'
+		implementation 'org.springframework.boot:spring-boot-starter-test'
+	}
+}
