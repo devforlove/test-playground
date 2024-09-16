@@ -8,7 +8,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 @FeignClient(
 		name = "bankClient",
-		url = "/ss"
+		url = "${feign.url.bank-url}",
+		configuration = BankClientFeignConfig.class
 )
 public interface BankBalanceClient {
 

@@ -18,8 +18,6 @@ dependencies {
     testImplementation 'org.springframework.security:spring-security-test'
     testFixturesImplementation('org.springframework.boot:spring-boot-starter-test')
     testFixturesImplementation('org.springframework.cloud:spring-cloud-contract-wiremock')
-    testFixturesApi('org.testcontainers:junit-jupiter')
-    testFixturesApi('org.testcontainers:mysql')
     // jwt
 //    implementation group: 'io.jsonwebtoken', name: 'jjwt-api', version: '0.11.5'
 //    runtimeOnly group: 'io.jsonwebtoken', name: 'jjwt-impl', version: '0.11.5'

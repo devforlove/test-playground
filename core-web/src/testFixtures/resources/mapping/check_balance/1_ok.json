@@ -9,7 +9,7 @@
     },
     "status": 200,
     "jsonBody": {
-      "data": ""
+      "balance": 1000
     }
   }
 }

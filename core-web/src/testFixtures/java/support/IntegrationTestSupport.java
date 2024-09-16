@@ -6,6 +6,6 @@ import org.springframework.cloud.contract.wiremock.AutoConfigureWireMock;
 
 @AutoConfigureWireMock(port = 0, stubs = "classpath:mapping")
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
-public class IntegrationTestSupport {
+public abstract class IntegrationTestSupport {
 
 }

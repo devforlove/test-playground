@@ -3,4 +3,5 @@ jar.enabled = false
 
 dependencies {
     implementation(project(":core-web"))
+    implementation(project(":bank-service-http-client"))
 }
