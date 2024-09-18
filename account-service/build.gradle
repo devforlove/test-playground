@@ -5,7 +5,8 @@ dependencies {
     implementation(project(':core-web'))
     implementation('org.springframework.boot:spring-boot-starter-data-jpa')
     implementation(project(':bank-service-http-client'))
-    runtimeOnly 'com.mysql:mysql-connector-j'
+    runtimeOnly('com.mysql:mysql-connector-j')
+    implementation('org.springframework.cloud:spring-cloud-starter-circuitbreaker-resilience4j')
 
     testImplementation(testFixtures(project(':bank-service-http-client')))
     testImplementation(testFixtures(project(':core-web')))

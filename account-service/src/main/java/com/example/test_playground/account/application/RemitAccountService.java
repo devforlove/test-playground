@@ -30,9 +30,9 @@ public class RemitAccountService {
 //				() -> new IllegalArgumentException("receiver account not exist")
 //		);
 
-		final RemittanceExecutor remittanceExecutor = new RemittanceExecutor();
-		remittanceExecutor.execute(senderAccount.get(), receiverAccount.get(), amount);
+//		final RemittanceExecutor remittanceExecutor = new RemittanceExecutor();
+//		remittanceExecutor.execute(senderAccount.get(), receiverAccount.get(), amount);
 
-		return amount;
+		return balance;
 	}
 }

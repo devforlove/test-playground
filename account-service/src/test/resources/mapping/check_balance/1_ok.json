@@ -1,0 +1,17 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPath": "/bank/1/balance"
+  },
+  "response": {
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "status": 200,
+    "jsonBody": {
+      "data": {
+        "balance": 1000
+      }
+    }
+  }
+}

@@ -1,15 +1,18 @@
 {
   "request": {
     "method": "GET",
-    "urlPath": "/bank/1/balance"
+    "urlPath": "/bank/2/balance"
   },
   "response": {
     "headers": {
       "Content-Type": "application/json"
     },
     "status": 200,
+    "fixedDelayMilliseconds": 5000,
     "jsonBody": {
-      "balance": 1000
+      "data": {
+        "balance": 2000
+      }
     }
   }
 }

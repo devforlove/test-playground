@@ -12,16 +12,16 @@ spring:
         format_sql: true
         show_sql: true
 
-feign:
-  url:
-    bank-url: http://localhost:82
-  client:
-    config:
-      default:
-        connectTimeout: 1000
-        readTimeout: 3000
-        loggerLevel: NONE
-      bankClient:
-        connectTimeout: 1000
-        readTimeout: 10000
-        loggerLevel: HEADERS
+  cloud:
+    openfeign:
+      client:
+        config:
+          default:
+            connectTimeout: 1000
+            readTimeout: 3000
+            loggerLevel: NONE
+          bankClient:
+            url: http://localhost:${wiremock.server.port}
+            connectTimeout: 1000
+            readTimeout: 1000
+            loggerLevel: HEADERS
